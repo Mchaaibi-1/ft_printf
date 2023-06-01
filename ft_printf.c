@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mchaaibi <mchaaibi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:35:53 by mchaaibi          #+#    #+#             */
-/*   Updated: 2023/03/23 17:37:27 by mchaaibi         ###   ########.fr       */
+/*   Updated: 2023/05/14 12:11:35 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,12 @@ int	ft_printf(const char *print, ...)
 	}
 	va_end(past);
 	return (l);
+}
+int main()
+{
+	char *s;
+	s = "azertky";
+	ft_printf("%d\n", ft_printf("%p\n", s));
+	printf("%d\n", ft_printf("%p\n", s));
+	
 }
