@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   function_.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchaaibi <mchaaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/18 22:28:13 by mchaaibi          #+#    #+#             */
-/*   Updated: 2023/06/01 17:51:20 by mchaaibi         ###   ########.fr       */
+/*   Created: 2023/06/01 16:55:39 by mchaaibi          #+#    #+#             */
+/*   Updated: 2023/06/01 16:55:49 by mchaaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+void	unsignedecimal(unsigned int x)
+{
+	char	buffer[50];
+	int		i;
+	int		j;
 
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdio.h>
-
-void	ft_putchar(char a);
-void	ft_putnbr(int n);
-void	ft_putstr(char *s, int *l);
-void	ft_hexalow(unsigned long d, int *l);
-void	ft_hexaup(unsigned int d, int *l);
-void	porsontage(char print, va_list past);
-int		ft_printf(const char *print, ...);
-
-#endif
+	i = 0;
+	while (x > 0)
+	{
+		buffer[i++] = x % 10 + '0';
+		x /= 10;
+	}
+	j = i -1;
+	while (j >= 0)
+	{
+		ft_putchar(buffer[j--]);
+	}
+}
