@@ -6,7 +6,7 @@
 /*   By: mchaaibi <mchaaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 22:28:13 by mchaaibi          #+#    #+#             */
-/*   Updated: 2023/06/01 17:51:20 by mchaaibi         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:26:02 by mchaaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	ft_putnbr(int n);
 void	ft_putstr(char *s, int *l);
 void	ft_hexalow(unsigned long d, int *l);
 void	ft_hexaup(unsigned int d, int *l);
-void	porsontage(char print, va_list past);
 int		ft_printf(const char *print, ...);
+void	handle_specifier(char spec, va_list past, int *l);
+void	unsignedecimal(unsigned int x);
 
 #endif
