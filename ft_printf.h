@@ -6,7 +6,7 @@
 /*   By: mchaaibi <mchaaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 22:28:13 by mchaaibi          #+#    #+#             */
-/*   Updated: 2023/06/02 16:26:02 by mchaaibi         ###   ########.fr       */
+/*   Updated: 2023/06/03 17:18:50 by mchaaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 
 void	ft_putchar(char a);
-void	ft_putnbr(int n);
+void	ft_putnbr(long n);
 void	ft_putstr(char *s, int *l);
 void	ft_hexalow(unsigned long d, int *l);
 void	ft_hexaup(unsigned int d, int *l);
