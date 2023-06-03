@@ -6,7 +6,7 @@
 #    By: mchaaibi <mchaaibi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 18:51:08 by mchaaibi          #+#    #+#              #
-#    Updated: 2023/06/02 19:59:33 by mchaaibi         ###   ########.fr        #
+#    Updated: 2023/06/03 20:03:23 by mchaaibi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SOURCES =  function.c\
-		functio.c \
+SOURCES =  functions.c\
+		function.c \
 		ft_printf.c 
 
 OBJECTS = $(SOURCES:.c=.o)
