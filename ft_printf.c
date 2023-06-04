@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mchaaibi <mchaaibi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:35:53 by mchaaibi          #+#    #+#             */
-/*   Updated: 2023/06/03 17:21:33 by mchaaibi         ###   ########.fr       */
+/*   Updated: 2023/06/04 20:08:50 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	handle_specifier(char spec, va_list past, int *l)
 		ft_putstr(va_arg(past, char *), l);
 	else if (spec == 'd' || spec == 'i')
 		ft_putnbr(va_arg(past, int));
+	else if (spec == 'u')
+		unsignedecimal(va_arg(past, unsigned int));
 	else if (spec == 'x')
 		ft_hexalow(va_arg(past, unsigned int), l);
 	else if (spec == 'X')
@@ -58,4 +60,11 @@ int	ft_printf(const char *print, ...)
 	}
 	va_end(past);
 	return (l);
+}
+int main()
+{
+	int x;
+	x = 298954297;
+	ft_printf("%d\n", x);
+	ft_printf("%u\n", x);
 }
