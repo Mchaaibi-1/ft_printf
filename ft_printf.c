@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:35:53 by mchaaibi          #+#    #+#             */
-/*   Updated: 2023/06/04 20:08:50 by mac              ###   ########.fr       */
+/*   Updated: 2023/06/04 20:12:41 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,4 @@ int	ft_printf(const char *print, ...)
 	}
 	va_end(past);
 	return (l);
-}
-int main()
-{
-	int x;
-	x = 298954297;
-	ft_printf("%d\n", x);
-	ft_printf("%u\n", x);
 }
