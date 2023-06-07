@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mchaaibi <mchaaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:35:53 by mchaaibi          #+#    #+#             */
-/*   Updated: 2023/06/04 20:12:41 by mac              ###   ########.fr       */
+/*   Updated: 2023/06/07 14:07:07 by mchaaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	handle_specifier(char spec, va_list past, int *l)
 {
 	if (spec == 'c')
-		ft_putchar(va_arg(past, int));
+		ft_putchar(va_arg(past, int), l);
 	else if (spec == '%')
-		ft_putchar('%');
+		ft_putchar('%', l);
 	else if (spec == 's')
 		ft_putstr(va_arg(past, char *), l);
 	else if (spec == 'd' || spec == 'i')
-		ft_putnbr(va_arg(past, int));
+		ft_putnbr(va_arg(past, int), l);
 	else if (spec == 'u')
-		unsignedecimal(va_arg(past, unsigned int));
+		unsignedecimal(va_arg(past, unsigned int), l);
 	else if (spec == 'x')
 		ft_hexalow(va_arg(past, unsigned int), l);
 	else if (spec == 'X')
@@ -53,8 +53,7 @@ int	ft_printf(const char *print, ...)
 		}
 		else
 		{
-			ft_putchar(print[j]);
-			l++;
+			ft_putchar(print[j], &l);
 		}
 		j++;
 	}

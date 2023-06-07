@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   function.c                                         :+:      :+:    :+:   */
+/*   functions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchaaibi <mchaaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:50:00 by mchaaibi          #+#    #+#             */
-/*   Updated: 2023/06/03 17:19:12 by mchaaibi         ###   ########.fr       */
+/*   Updated: 2023/06/07 14:00:49 by mchaaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char a)
+void	ft_putchar(char a, int *l)
 {
 	write (1, &a, 1);
+	(*l)++;
 }
 
-void	ft_putnbr(long n)
+void	ft_putnbr(long n, int *l)
 {
 	if (n < 0)
 	{
-		ft_putchar('-');
+		ft_putchar('-', l);
 		n = -n;
 	}
 	if (n >= 10)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		ft_putnbr(n / 10, l);
+		ft_putnbr(n % 10, l);
 	}
 	else
 	{
-		ft_putchar(n + '0');
+		ft_putchar(n + '0', l);
 	}
 }
 
@@ -48,8 +49,7 @@ void	ft_putstr(char *s, int *l)
 	}
 	while (s[i])
 	{
-		ft_putchar(s[i]);
-		(*l)++;
+		ft_putchar(s[i], l);
 		i++;
 	}
 }
@@ -59,11 +59,11 @@ void	ft_hexalow(unsigned long d, int *l)
 	int		i;
 	int		j;
 	int		modulo;
-	char	hexa[17];
+	char	hexa[16];
 
 	i = 0;
 	if (d == 0)
-		ft_putchar(48);
+		ft_putchar(48, l);
 	while (d != 0)
 	{
 		modulo = d % 16;
@@ -76,20 +76,21 @@ void	ft_hexalow(unsigned long d, int *l)
 	j = i - 1;
 	while (j >= 0)
 	{
-		ft_putchar(hexa[j]);
-		(*l)++;
+		ft_putchar(hexa[j], l);
 		j--;
 	}
 }
 
 void	ft_hexaup(unsigned int d, int *l)
 {
-	char	hexa[17];
 	int		i;
-	int		modulo;
 	int		j;
+	int		modulo;
+	char	hexa[16];
 
 	i = 0;
+	if (d == 0)
+		ft_putchar(48, l);
 	while (d != 0)
 	{
 		modulo = d % 16;
@@ -102,8 +103,7 @@ void	ft_hexaup(unsigned int d, int *l)
 	j = i - 1;
 	while (j >= 0)
 	{
-		ft_putchar(hexa[j]);
-		(*l)++;
+		ft_putchar(hexa[j], l);
 		j--;
 	}
 }
